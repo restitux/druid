@@ -593,7 +593,7 @@ impl<T: TextStorage + EditableText> Widget<T> for TextBox<T> {
         let size = self.inner.layout(ctx, &child_bc, data, env);
 
         let text_metrics = if !self.text().can_read() || data.is_empty() {
-            dbg!(self.placeholder_layout.layout_metrics())
+            self.placeholder_layout.layout_metrics()
         } else {
             self.text().borrow().layout.layout_metrics()
         };
